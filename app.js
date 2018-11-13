@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var internalApi = require('./routes/internal-api');
 var ioBound = require('./routes/read-file');
 var perhapsIntensive = require('./routes/perhaps-intensive');
+var redisUpdate = require('./routes/redis-update');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/', index);
 app.use('/internal-api', internalApi);
 app.use('/get-file', ioBound);
 app.use('/perhaps-intensive', perhapsIntensive);
+app.use('/redis-update', redisUpdate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
